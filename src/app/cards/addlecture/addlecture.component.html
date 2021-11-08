@@ -1,0 +1,116 @@
+<div class="container" >
+  <h2 style="text-align: center;">Session 2021-22</h2>
+    <h3 style="text-align: center;">Highest/Cut-off % of First year classes/courses (admissions upto 25/10/2021)</h3>
+<div class="row justify-content-center">
+ 
+
+  <div class="col-xl-12" style="margin-top: 1%;">
+    
+    <div class="card fancy-card">
+        <div class="card-body">
+
+<form class="create-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)" *ngIf="exampleForm">
+
+<div class="form-group">
+ 
+<mat-form-field appearance="fill"  class="fieldsizessp">
+    <mat-label>Class</mat-label>
+    <mat-select required formControlName="class">
+      <mat-option *ngFor="let class of classes" [value]="class.value">
+        {{class.value}}
+      </mat-option>
+    </mat-select>
+  
+    <ng-container *ngFor="let validation of validation_messages.class">
+    
+      <mat-error *ngIf="exampleForm.get('class').hasError(validation.type) && (exampleForm.get('class').dirty || exampleForm.get('class').touched)">{{validation.message}}</mat-error>
+    </ng-container>
+  </mat-form-field>
+  
+  
+  <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+    <mat-label>Total Students</mat-label>
+    <input matInput required placeholder="UT Gen Cut-off" class="form-control" formControlName="totalstudents">
+  </mat-form-field>
+
+<mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>UT Gen Highest %</mat-label>
+        <input matInput required placeholder="UT Gen Highest %" class="form-control" formControlName="UTgenh">
+      </mat-form-field>
+
+
+      <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>UT Gen Cut-off %</mat-label>
+        <input matInput required placeholder="UT Gen Cut-off" class="form-control" formControlName="UTgencoff">
+      </mat-form-field>
+
+      <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>UT SC Highest %</mat-label>
+        <input matInput required  placeholder="UT SC Highest %" class="form-control" formControlName="UTsch">
+      </mat-form-field>
+      <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>UT SC Cut-off %</mat-label>
+        <input matInput required  placeholder="UT SC Cut-off %" class="form-control" formControlName="UTsccoff">
+      </mat-form-field>
+     <ng-container *ngFor="let validation of validation_messages.UTgencoff">
+   
+        <mat-error *ngIf="exampleForm.get('UTgencoff').hasError(validation.type) && (exampleForm.get('UTgencoff').dirty || exampleForm.get('UTgencoff').touched)">{{validation.message}}</mat-error>
+      </ng-container>
+      <ng-container *ngFor="let validation of validation_messages.UTsccoff">
+    
+        <mat-error *ngIf="exampleForm.get('UTsccoff').hasError(validation.type) && (exampleForm.get('UTsccoff').dirty || exampleForm.get('UTsccoff').touched)">{{validation.message}}</mat-error>
+      </ng-container>
+ 
+
+
+ <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>Outside-UT Gen Highest %</mat-label>
+        <input matInput required placeholder="Outside-UT Gen Highest %" class="form-control" formControlName="outgenh">
+      </mat-form-field>
+
+ <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>Outside-UT Gen Cut-off %</mat-label>
+        <input matInput required placeholder="Outside-UT Gen Cut-off" class="form-control" formControlName="outgencoff">
+      </mat-form-field>
+     
+     
+      <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>Outside-UT SC Highest %</mat-label>
+        <input matInput required  placeholder="Outside-UT SC Highest %" class="form-control" formControlName="outsch">
+      </mat-form-field>
+     
+     
+      <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>Outside-UT SC Cut-off %</mat-label>
+        <input matInput required  placeholder="Outside-UT SC Cut-off %" class="form-control" formControlName="outsccoff">
+      </mat-form-field>
+
+
+      <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>Outside-UT ST Highest %</mat-label>
+        <input matInput required  placeholder="Outside-UT ST Highest %" class="form-control" formControlName="outsth">
+      </mat-form-field>
+     
+
+      <mat-form-field  appearance="fill" class="input-style fieldsizessp">
+        <mat-label>Outside-UT ST Cut-off</mat-label>
+        <input matInput required  placeholder="Outside-UT ST Cut-off" class="form-control" formControlName="outstcoff">
+      </mat-form-field>
+      
+
+
+       </div>
+<div class="row submit-button-container">
+  <div class="col-md-4">
+    <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid">Submit</button>
+  </div>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+  
+</div>
+

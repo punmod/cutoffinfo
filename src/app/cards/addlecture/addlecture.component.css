@@ -1,0 +1,24 @@
+@media screen and (max-width: 600px) {
+    .fieldsizessp {
+      width: 100%;
+    }
+    .alwaysfull{
+      width:100%;
+    }
+    .fieldsize3q{
+      width:100%;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .fieldsizessp {
+      width: 45%;
+      margin-right: 2%;
+    }
+    .fieldsize3q{
+      width:75%;
+    }
+    .alwaysfull{
+      width:100%;
+    }
+  }

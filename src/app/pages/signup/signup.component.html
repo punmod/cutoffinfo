@@ -1,0 +1,88 @@
+
+<div id="logreg-forms" sytle="margin-top:5%" >
+    <form class="form-signin" *ngIf="!signuprequired && !forgotpasswordstatus" >
+       
+        <div class="social-login" style="text-align: center;">
+         
+            <button class="btn btn btn-primary btn-block" (click)="authservice.signingoogle()" type="button" ><span><i class="fab fa-google-plus-g"></i> Sign In with Google</span> </button>
+        </div>
+        <p style="text-align:center"> OR  </p>
+        <div class="input-group">
+          <input type="email" style="margin-bottom: 2%;" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" #inputEmail>
+        </div>
+  
+        <div class="input-group">
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" #inputPassword>
+        </div>
+  
+        <div class="input-group">
+          <button class="btn btn-md btn-rounded btn-block form-control submit" style="margin-top:2%" type="button" (click)="authservice.loginunamepassword(inputEmail.value, inputPassword.value)" ><i class="fas fa-sign-in-alt"></i> Sign in</button>
+        </div>
+  
+        <a href="#" style="color:black" (click)="forgotpasswordchangestatus()">Forgot password?</a>
+        <hr>
+        <!-- <p>Don't have an account!</p>  -->
+        <button (click)= "changesignupstatus()" class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up with Email/Password</button>
+        </form>
+  
+        <form action="#" class="form-signin" *ngIf="forgotpasswordstatus">
+            <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="" #resetEmail>
+            <button class="btn btn-primary btn-block" type="submit" (click)="resetpassword(resetEmail.value)">Reset Password</button>
+            <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+        </form>
+  
+     
+  </div>     
+       
+  
+  
+        <div class="container" style="margin-top: 2%;" *ngIf="signuprequired  && !forgotpasswordstatus" >
+    
+          <div class="row">
+              <div class="col-lg-12" style="margin-top: 1%;">
+                  <div class="card fancy-card">
+                      <div class="card-body">
+        <form class="create-form"  [formGroup]="exampleForm" novalidate (ngSubmit)="authservice.signupwithemailpassword(exampleForm.value)" *ngIf="signuprequired && exampleForm">
+  
+        
+          
+         
+       
+          <div class="form-group">
+            <mat-form-field class="input" style="width: 75%;">
+              <input matInput  placeholder="Email" class="form-control" formControlName="emailadd">
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validation_messages.emailadd">
+              <mat-error *ngIf="exampleForm.get('emailadd').hasError(validation.type) && (exampleForm.get('emailadd').dirty || exampleForm.get('emailadd').touched)">{{validation.message}}</mat-error>
+            </ng-container>
+          </div>
+            
+  
+          
+            
+          <div class="form-group">
+            <mat-form-field class="input" style="width: 75%;">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" class="form-control" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          <ng-container *ngFor="let validation of validation_messages.password">
+            <mat-error *ngIf="exampleForm.get('password').hasError(validation.type) && (exampleForm.get('password').dirty || exampleForm.get('password').touched)">{{validation.message}}</mat-error>
+                                                  
+          </ng-container>
+          </div>
+  
+          <div class="row submit-button-container">
+            <div class="col-md-4">
+              <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid">Sign Up</button>
+            </div>
+          </div>
+  
+        </form> 
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>

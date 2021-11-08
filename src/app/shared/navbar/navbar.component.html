@@ -1,0 +1,28 @@
+
+<div class="container" >
+    
+    <div  style="text-align: center;"> <img width="50px"  src="../../../assets/img/logo-chandigarh.png">
+        <img width="50px" style="margin-left:2%;" src="../../../assets/img/russa.jpg">  <span ><br> Chandigarh Administration</span> </div>
+    <div  style="text-align: center;"><span > Department Of Higher Education</span></div>
+    <div class="row" *ngIf="shownavbar">
+       
+      
+      
+<div class="col-xl-12 col-12">     
+        <div style="text-align: right;">
+    <button mat-icon-button  [matMenuTriggerFor]="menu2" >
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu2="matMenu"  >
+
+<button mat-menu-item><a href="#" class="card-link" (click)="auth.Logout()" style="margin-right: 2%;">Logout/Signout</a></button>
+</mat-menu>
+</div>
+        </div>
+    </div>
+
+
+
+</div>
+    
+
